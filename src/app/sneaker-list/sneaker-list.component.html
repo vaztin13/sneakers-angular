@@ -1,0 +1,15 @@
+<div class="row mt-4">
+    <div *ngFor="let sneaker of sneakers" class="col-md-3 col-lg-2 py-5">
+
+        <div class="card h-100">
+            <img class="card-img-top" [src]="sneaker.image" [alt]="sneaker.name">
+            <div class="card-body border-top">
+                <h6>{{sneaker.name}}</h6>
+                <span class="badge rounded-pill text-bg-danger" *ngIf="sneaker.stock == 0">Producto sin stock</span>
+                <h5 class="card-text"> <strong>{{sneaker.price | currency }}</strong></h5>
+            </div>
+        </div>
+
+    </div>
+
+</div>
