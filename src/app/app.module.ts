@@ -6,17 +6,24 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SneakerListComponent } from './sneaker-list/sneaker-list.component';
 import { CartComponent } from './cart/cart.component';
+import { SneakersAboutComponent } from './sneakers-about/sneakers-about.component';
+import { SneakersHomeComponent } from './sneakers-home/sneakers-home.component';
+
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     SneakerListComponent,
-    CartComponent
+    CartComponent,
+    SneakersAboutComponent,
+    SneakersHomeComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
