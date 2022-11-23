@@ -1,0 +1,16 @@
+<div class="row">
+    <div class="col-12 mt-1">
+        <button class="btn btn-sm btn-block btn-dark " *ngIf="max == 0" disabled>-</button>
+        <button class="btn btn-sm btn-block btn-dark " *ngIf="max > 0" (click)="setQuantity('res')">-</button>
+    </div>
+    <div class="col-12 mt-1 ">
+        <input type="number" class="form-control form-control-sm text-center" *ngIf="max == 0" [(ngModel)]="quantity"
+            disabled value="">
+        <input type="number" class="form-control form-control-sm text-center" *ngIf="max > 0"
+             [(ngModel)]="quantity">
+    </div>
+    <div class="col-12 mt-1">
+        <button class="btn btn-sm btn-block btn-dark " *ngIf="max == 0" disabled>+</button>
+        <button class="btn btn-sm btn-block btn-dark " *ngIf="max > 0" (click)="setQuantity('sum')">+</button>
+    </div>
+</div>

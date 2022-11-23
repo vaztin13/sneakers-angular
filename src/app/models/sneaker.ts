@@ -4,4 +4,5 @@ export interface Sneaker {
     price: number;
     stock: number;
     image: string;
+    quantity: number;
 }

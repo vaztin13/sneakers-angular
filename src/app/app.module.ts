@@ -10,6 +10,8 @@ import { SneakersAboutComponent } from './sneakers-about/sneakers-about.componen
 import { SneakersHomeComponent } from './sneakers-home/sneakers-home.component';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { InputQuantityComponent } from './input-quantity/input-quantity.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,11 +21,13 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     CartComponent,
     SneakersAboutComponent,
     SneakersHomeComponent,
+    InputQuantityComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

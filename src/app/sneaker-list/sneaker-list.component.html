@@ -6,10 +6,19 @@
             <div class="card-body border-top">
                 <h6>{{sneaker.name}}</h6>
                 <span class="badge rounded-pill text-bg-danger" *ngIf="sneaker.stock == 0">Producto sin stock</span>
-                <h5 class="card-text"> <strong>{{sneaker.price | currency }}</strong></h5>
+                <h5 class="card-text"><strong>{{sneaker.price | currency}}</strong></h5>
+            </div>
+            <div class="card-footer text-muted bg-white">
+                <app-input-quantity [(quantity)]="sneaker.quantity" [max]="sneaker.stock"></app-input-quantity>
+                Cant: {{sneaker.quantity}}
+                <div class="row">
+                    <div class="col-md-12 mt-3">
+                        <button  class="btn btn-sm btn-block btn-dark "  *ngIf="sneaker.stock == 0" disabled>Agregar al carrito</button>
+                        <button  class="btn btn-sm btn-block btn-success " *ngIf="sneaker.stock > 0"  (click)="addToCart(sneaker)">Agregar al carrito</button>
+                    </div>
+                </div>
             </div>
         </div>
-        
     </div>
 
 </div>

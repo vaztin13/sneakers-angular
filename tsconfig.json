@@ -21,7 +21,8 @@
     "lib": [
       "es2020",
       "dom"
-    ]
+    ],
+    "strictPropertyInitialization": false // Para arreglar propiedad de una clase sin inicializar
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
