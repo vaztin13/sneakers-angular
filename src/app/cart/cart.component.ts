@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Sneaker } from '../models/sneaker';
 import { SneakerCartService } from '../sneaker-cart.service';
 
 @Component({
@@ -8,7 +10,11 @@ import { SneakerCartService } from '../sneaker-cart.service';
 })
 export class CartComponent implements OnInit {
 
-  constructor(private cart : SneakerCartService) { }
+  cartList$: Observable<Sneaker[]>;
+  
+  constructor(private cart : SneakerCartService) {
+    this.cartList$ = cart.cartList.asObservable();
+   }
 
   ngOnInit(): void {
   }

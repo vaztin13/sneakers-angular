@@ -13,8 +13,9 @@
                 Cant: {{sneaker.quantity}}
                 <div class="row">
                     <div class="col-md-12 mt-3">
-                        <button  class="btn btn-sm btn-block btn-dark "  *ngIf="sneaker.stock == 0" disabled>Agregar al carrito</button>
-                        <button  class="btn btn-sm btn-block btn-success " *ngIf="sneaker.stock > 0"  (click)="addToCart(sneaker)">Agregar al carrito</button>
+                        <button  class="btn btn-sm btn-block btn-dark"  *ngIf="sneaker.stock == 0" disabled>Agregar al carrito</button>
+                        <button  class="btn btn-sm btn-block btn-success" data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" *ngIf="sneaker.stock > 0"  (click)="addToCart(sneaker)">Agregar al carrito</button>
                     </div>
                 </div>
             </div>

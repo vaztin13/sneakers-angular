@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
+import { Observable } from 'rxjs';
+import { Sneaker } from '../models/sneaker';
+import { SneakerCartService } from '../sneaker-cart.service';
 
 @Component({
   selector: 'app-navbar',
@@ -8,7 +11,14 @@ import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 })
 export class NavbarComponent implements OnInit {
   faCartShopping = faCartShopping;
-  constructor() { }
+
+  cartList$: Observable<Sneaker[]>;
+  
+  constructor(private cart : SneakerCartService) {
+    this.cartList$ = cart.cartList.asObservable();
+  }
+
+
 
   ngOnInit(): void {
   }

@@ -1,3 +1,7 @@
 <h1>Carrito</h1>
 
-<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius quidem quo aperiam, officia animi eos voluptatem enim impedit reiciendis corporis ratione quibusdam deleniti itaque eaque rerum saepe quas eveniet similique.</p>
+<ul>
+    <li *ngFor="let sneaker of (cartList$ | async)">
+        {{sneaker.name}} : {{sneaker.quantity}}
+    </li>
+</ul>

@@ -14,7 +14,25 @@
                     <a class="nav-link" [routerLink]="['/about']">About</a>
                 </li>
             </ul>
-                <a class="nav-link" [routerLink]="['/cart']"><fa-icon [icon]="faCartShopping"></fa-icon></a> 
+            <a class="nav-link" [routerLink]="['/cart']">
+                <fa-icon [icon]="faCartShopping"></fa-icon>
+            </a>
         </div>
     </div>
 </nav>
+
+<div>
+    <div class="offcanvas offcanvas-end show text-bg-dark" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasRightLabel">CARRITO</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul>
+                <li *ngFor="let sneaker of (cartList$ | async)">
+                    {{sneaker.name}} : {{sneaker.quantity}}
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
