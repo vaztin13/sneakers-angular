@@ -10,6 +10,9 @@ import { SneakersAboutComponent } from './sneakers-about/sneakers-about.componen
 import { SneakersHomeComponent } from './sneakers-home/sneakers-home.component';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
+
 import { InputQuantityComponent } from './input-quantity/input-quantity.component';
 import { FormsModule } from '@angular/forms';
 
@@ -23,13 +26,12 @@ import { FormsModule } from '@angular/forms';
     SneakersHomeComponent,
     InputQuantityComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FontAwesomeModule,
-    FormsModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, FontAwesomeModule, FormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {
+  constructor() {
+    library.add(faCartShopping);
+  }
+}
