@@ -16,7 +16,7 @@ export class SneakerListComponent implements OnInit {
     price : 200,
     stock : 3,
     image : "assets/img/air-force-low-icon.jpg",
-    quantity: 0
+    quantity: 1
   },
   {
     name : "Jordan 4 Retro Royalty",
@@ -24,7 +24,7 @@ export class SneakerListComponent implements OnInit {
     price : 400,
     stock : 1,
     image : "assets/img/jordan-4-royalty.jpg",
-    quantity: 0
+    quantity: 1
   },
   {
     name : "Nike Air More Uptempo Scottie Pippen",
@@ -32,7 +32,7 @@ export class SneakerListComponent implements OnInit {
     price : 190,
     stock : 2,
     image : "assets/img/air-uptempo-scottie.jpg",
-    quantity: 0
+    quantity: 1
   },
   {
     name : "Jordan 4 Retro Pure Money",
@@ -40,7 +40,7 @@ export class SneakerListComponent implements OnInit {
     price : 210,
     stock : 0,
     image : "assets/img/jordan-pure-money.jpg",
-    quantity: 0
+    quantity: 1
   },
   {
     name : "Jordan 1 Mid Triple White",
@@ -48,7 +48,7 @@ export class SneakerListComponent implements OnInit {
     price : 223,
     stock : 5,
     image : "assets/img/jordan-triple-white.jpg",
-    quantity: 0
+    quantity: 1
   },
   {
     name : "Yeezy Boost 350 V2 Zebra",
@@ -56,7 +56,7 @@ export class SneakerListComponent implements OnInit {
     price : 300,
     stock : 0,
     image : "assets/img/yeezy-350.jpg",
-    quantity: 0
+    quantity: 1
   },
   {
     name : "Jordan 11 Retro Playoffs Bred",
@@ -64,7 +64,7 @@ export class SneakerListComponent implements OnInit {
     price : 340,
     stock : 1,
     image : "assets/img/jordan-playoff.jpg",
-    quantity: 0
+    quantity: 1
   },
   {
     name : "Jordan 1 Retro High OG Hyper Royal",
@@ -72,7 +72,7 @@ export class SneakerListComponent implements OnInit {
     price : 360,
     stock : 4,
     image : "assets/img/jordan-high-og.jpg",
-    quantity: 0
+    quantity: 1
   },
 ];
   
@@ -86,6 +86,7 @@ export class SneakerListComponent implements OnInit {
 
   addToCart(sneaker: Sneaker): void { //MAL
     this.cart.addToCart(sneaker);
+    this.cart.totalPriceItems();
     sneaker.stock -= sneaker.quantity;
     sneaker.quantity = 0;
   }

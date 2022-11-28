@@ -8,12 +8,15 @@ import { SneakerCartService } from '../sneaker-cart.service';
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.scss']
 })
+
 export class CartComponent implements OnInit {
 
   cartList$: Observable<Sneaker[]>;
+  totalPrice$: Observable<number>;
   
   constructor(private cart : SneakerCartService) {
     this.cartList$ = cart.cartList.asObservable();
+    this.totalPrice$ = cart.totalPrice.asObservable();
    }
 
   ngOnInit(): void {

@@ -13,14 +13,23 @@ export class NavbarComponent implements OnInit {
   faCartShopping = faCartShopping;
 
   cartList$: Observable<Sneaker[]>;
+  totalPrice$: Observable<number>;
+  router: any;
   
   constructor(private cart : SneakerCartService) {
     this.cartList$ = cart.cartList.asObservable();
+    this.totalPrice$ = cart.totalPrice.asObservable();
   }
-
-
 
   ngOnInit(): void {
   }
+
+  // isCartRoute() {
+  //   if (this.router.url == '/cart') {
+  //     return true;
+  //   } else {
+  //     return false;
+  //   }
+  // }
 
 }

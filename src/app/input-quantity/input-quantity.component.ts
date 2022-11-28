@@ -34,7 +34,7 @@ export class InputQuantityComponent implements OnInit {
       }
     }
     if(action === 'res'){
-      if(this.quantity > 0){
+      if(this.quantity > 1){
         this.quantity--;
         this.maxReached.emit(false);  
       }

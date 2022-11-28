@@ -1,0 +1,39 @@
+.cart-item {
+    display: flex;
+}
+
+#cart {
+    cursor: pointer;
+}
+
+button.btn.btn-sm.btn-block.btn-success {
+    
+    --bs-btn-bg: #0c4a2d;
+    --bs-btn-border-color: #063620;
+    --bs-btn-hover-color: #fff;
+}
+
+.go-to-cart {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-direction: column;
+    padding: 20px;
+}
+
+li {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.sneaker-details {
+    padding: 10px;
+}
+
+.total {
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1rem;
+}
+

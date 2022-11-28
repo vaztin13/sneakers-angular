@@ -4,4 +4,8 @@
     <li *ngFor="let sneaker of (cartList$ | async)">
         {{sneaker.name}} : {{sneaker.quantity}}
     </li>
+
+    {{totalPrice$ | async | currency}}
+      
+
 </ul>
