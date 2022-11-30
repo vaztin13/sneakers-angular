@@ -24,12 +24,6 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  // isCartRoute() {
-  //   if (this.router.url == '/cart') {
-  //     return true;
-  //   } else {
-  //     return false;
-  //   }
-  // }
+
 
 }

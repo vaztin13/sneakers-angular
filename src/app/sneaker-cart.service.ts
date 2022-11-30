@@ -17,7 +17,7 @@ export class SneakerCartService {
   
   totalPrice: BehaviorSubject<number> = new BehaviorSubject(this._totalPrice);
 
-   _wishlist: Wish[] = [];
+  _wishlist: Wish[] = [];
 
   wishlist: BehaviorSubject<Wish[]> = new BehaviorSubject(this._wishlist);
 
@@ -48,25 +48,5 @@ export class SneakerCartService {
     this.totalPrice.next(this._totalPrice);
   }
   
-
-  // funcion wishlist
-  add2Wishlist(sneaker: Wish):void {
-    debugger;
-    let item = this._cartList.find((v1) => v1.name == sneaker.name)!;
-    if (!item) {
-      this._wishlist.push({... sneaker});
-    } 
-    this.wishlist.next(this._wishlist);
-  }
-
-  deleteWishlist(sneaker: Wish):void {
-    let item = this._wishlist.find((v1) => v1.name == sneaker.name)
-    const index = this._wishlist.indexOf(item!);
-    if (index > -1) { // only splice array when item is found
-      this._wishlist.splice(index, 1); // 2nd parameter means remove one item only
-    }
-    this.wishlist.next(this._wishlist);
-  }
-
 
 }

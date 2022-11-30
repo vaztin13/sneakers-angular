@@ -18,6 +18,7 @@
                         data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" *ngIf="sneaker.stock > 0"  (click)="addToCart(sneaker)">Agregar al carrito</button>
                     </div>
                     <div class="col-md-12 mt-3">
+                        <app-wishlist-button [image]="sneaker.image" [name]="sneaker.name"></app-wishlist-button>
                     </div>
                 </div>
             </div>

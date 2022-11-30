@@ -4,9 +4,9 @@
         <ng-template #Else><button class="btn btn-sm btn-block btn-dark" (click)="setQuantity('res')">-</button></ng-template>
     </div>
     <div class="col-12 mt-1 ">
-        <input type="number" class="form-control form-control-sm text-center" *ngIf="max == 0" [(ngModel)]="quantity"
+        <input type="number" class="form-control form-control-sm text-center" readonly *ngIf="max == 0" [(ngModel)]="quantity"
             disabled value="">
-        <input type="number" class="form-control form-control-sm text-center" *ngIf="max > 0"
+        <input type="number" class="form-control form-control-sm text-center" readonly *ngIf="max > 0"
              [(ngModel)]="quantity">
     </div>
     <div class="col-12 mt-1">

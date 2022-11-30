@@ -1,0 +1,19 @@
+<ng-container *ngIf="(wishlistList$ | async) as activeWishlist">
+    <h1 class="wishlistTitle">Tu lista de deseados</h1>
+    <div class="wishlistTitle" *ngIf="activeWishlist.length == 0">
+        <p>Agregá a deseados tu par de zapatillas favoritas</p>
+    </div>
+</ng-container>
+
+<div class="wishlist-container">
+    <ul class="vstack gap-3">
+        <li id="wishlist" *ngFor="let sneaker of wishlistList$ | async">
+            <div class="sneaker-details">
+                {{sneaker.name | uppercase}}
+            </div>
+            <div class="cart-image">
+                <img src="{{sneaker.image}}" height="90" alt="cart-image">
+            </div>
+        </li>
+    </ul>
+</div>

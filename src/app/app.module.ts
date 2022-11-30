@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SneakerListComponent } from './sneaker-list/sneaker-list.component';
 import { CartComponent } from './cart/cart.component';
-import { SneakersAboutComponent } from './sneakers-about/sneakers-about.component';
 import { SneakersHomeComponent } from './sneakers-home/sneakers-home.component';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -15,6 +14,9 @@ import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 
 import { InputQuantityComponent } from './input-quantity/input-quantity.component';
 import { FormsModule } from '@angular/forms';
+import { WishlistComponent } from './wishlist/wishlist.component';
+import { WishlistButtonComponent } from './wishlist-button/wishlist-button.component';
+import { SneakersContactComponent } from './sneakers-contact/sneakers-contact.component';
 
 
 @NgModule({
@@ -23,9 +25,11 @@ import { FormsModule } from '@angular/forms';
     NavbarComponent,
     SneakerListComponent,
     CartComponent,
-    SneakersAboutComponent,
     SneakersHomeComponent,
     InputQuantityComponent,
+    WishlistComponent,
+    WishlistButtonComponent,
+    SneakersContactComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FontAwesomeModule, FormsModule],
   providers: [],
