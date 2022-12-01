@@ -15,7 +15,7 @@ export class SneakerListComponent implements OnInit {
     type : "air",
     price : 200,
     stock : 3,
-    image : "assets/img/air-force-low-icon.jpg",
+    image : "https://raw.githubusercontent.com/vaztin13/sneakers-angular/master/src/assets/img/air-force-low-icon.jpg",
     quantity: 1
   },
   {
@@ -23,7 +23,7 @@ export class SneakerListComponent implements OnInit {
     type : "jordan",
     price : 400,
     stock : 1,
-    image : "assets/img/jordan-4-royalty.jpg",
+    image : "https://raw.githubusercontent.com/vaztin13/sneakers-angular/master/src/assets/img/jordan-4-royalty.jpg",
     quantity: 1
   },
   {
@@ -31,7 +31,7 @@ export class SneakerListComponent implements OnInit {
     type : "air",
     price : 190,
     stock : 2,
-    image : "assets/img/air-uptempo-scottie.jpg",
+    image : "https://raw.githubusercontent.com/vaztin13/sneakers-angular/master/src/assets/img/air-uptempo-scottie.jpg",
     quantity: 1
   },
   {
@@ -39,7 +39,7 @@ export class SneakerListComponent implements OnInit {
     type : "jordan",
     price : 210,
     stock : 0,
-    image : "assets/img/jordan-pure-money.jpg",
+    image : "https://raw.githubusercontent.com/vaztin13/sneakers-angular/master/src/assets/img/jordan-pure-money.jpg",
     quantity: 1
   },
   {
@@ -47,7 +47,7 @@ export class SneakerListComponent implements OnInit {
     type : "jordan",
     price : 223,
     stock : 5,
-    image : "assets/img/jordan-triple-white.jpg",
+    image : "https://raw.githubusercontent.com/vaztin13/sneakers-angular/master/src/assets/img/jordan-triple-white.jpg",
     quantity: 1
   },
   {
@@ -55,7 +55,7 @@ export class SneakerListComponent implements OnInit {
     type : "yeezy",
     price : 300,
     stock : 0,
-    image : "assets/img/yeezy-350.jpg",
+    image : "https://raw.githubusercontent.com/vaztin13/sneakers-angular/master/src/assets/img/yeezy-350.jpg",
     quantity: 1
   },
   {
@@ -63,7 +63,7 @@ export class SneakerListComponent implements OnInit {
     type : "jordan",
     price : 340,
     stock : 1,
-    image : "assets/img/jordan-playoff.jpg",
+    image : "https://raw.githubusercontent.com/vaztin13/sneakers-angular/master/src/assets/img/jordan-playoff.jpg",
     quantity: 1
   },
   {
@@ -71,7 +71,7 @@ export class SneakerListComponent implements OnInit {
     type : "jordan",
     price : 360,
     stock : 4,
-    image : "assets/img/jordan-high-og.jpg",
+    image : "https://raw.githubusercontent.com/vaztin13/sneakers-angular/master/src/assets/img/jordan-high-og.jpg",
     quantity: 1
   },
 ];
@@ -84,11 +84,18 @@ export class SneakerListComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  addToCart(sneaker: Sneaker): void { //MAL
-    this.cart.addToCart(sneaker);
-    this.cart.totalPriceItems();
-    sneaker.stock -= sneaker.quantity;
-    sneaker.quantity = 0;
+  addToCart(sneaker: Sneaker): void {
+    if ((sneaker.stock >= sneaker.quantity)&&(sneaker.quantity > 0)) {
+      this.cart.addToCart(sneaker);
+      this.cart.totalPriceItems();
+      sneaker.stock -= sneaker.quantity;
+      sneaker.quantity = 0;
+    }
   }
+
+  maxReachedAlert(m: string){
+    alert(m);
+  }
+
 
 }

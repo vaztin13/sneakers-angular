@@ -7,48 +7,59 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class InputQuantityComponent implements OnInit {
 
+  error: Boolean = false;
+
   @Input()
   quantity: number;
   @Input()
   max: number;
-  
+
   @Output()
   quantityChange: EventEmitter<number> = new EventEmitter<number>();
 
   @Output()
-  maxReached: EventEmitter<boolean> = new EventEmitter<boolean>();
+  maxReached: EventEmitter<string> = new EventEmitter<string>();
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  setQuantity(action: string ){
-    if(action === 'sum'){
-      if(this.quantity < this.max){
+  setQuantity(action: string) {
+    if (action === 'sum') {
+      if (this.quantity < this.max) {
         this.quantity++;
-        this.maxReached.emit(false);
+        this.error = false;
+        this.quantityChange.emit(this.quantity);
       }
       else {
-        this.maxReached.emit(true)
+        this.maxReached.emit("Este es el maximo de stock" );
       }
     }
-    if(action === 'res'){
-      if(this.quantity > 1){
+    if (action === 'res') {
+      if (this.quantity > 1) {
         this.quantity--;
-        this.maxReached.emit(false);  
       }
     }
 
-    this.quantityChange.emit(this.quantity);
-    /* if(action === 'inp'){
-      event.preventDefault();
-      const val = event.target.value; 
-      console.log(val)
-      if((val < item.stock)&&(val > 0)){
-        item.quantity = val;
+
+  }
+
+  quantityChangeInput() {
+    if (isNaN(Number(this.quantity))) {
+      this.error = false;
+      this.quantity = 0;
+      this.quantityChange.emit(this.quantity);
+    }
+    else {
+      if (Number(this.quantity) > this.max) {
+        this.error = true;
       }
-    } */
+      else {
+        this.quantity = Number(this.quantity);
+        this.quantityChange.emit(this.quantity);
+      }
+    }
   }
 
 }

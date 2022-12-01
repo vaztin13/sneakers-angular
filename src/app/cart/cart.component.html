@@ -1,34 +1,68 @@
-<div *ngIf="(cartList$ | async) as activeCart">
+<div *ngIf="(cartList$ | async) as activeCart" class="cart-container">
 
     <div *ngIf="activeCart.length > 0">
-    
-        <h1>Carrito</h1>
 
-        <table class="table table-bordered border border-info p-2 mb-2 border-opacity-25">
+        <h1>Mi carrito</h1>
+
+        <table class="table table-borderless">
             <thead>
                 <tr>
-                    <th scope="col">Imagen</th>
-                    <th scope="col">Nombre</th>
-                    <th scope="col">Cantidad</th>
-                    <th scope="col">Precio</th>
+                    <th scope="col">Producto</th>
+                    <th scope="col" class="table-separation">Cantidad</th>
+                    <th scope="col" class="table-separation">Precio</th>
                 </tr>
             </thead>
 
             <tbody *ngFor="let sneaker of (cartList$ | async)">
                 <tr>
-                    <th scope="row"><img [src]="sneaker.image" height="90" class="rounded float-start" alt="cart-image">
-                    </th>
-                    <td>{{sneaker.name}}</td>
-                    <td>{{sneaker.quantity}}</td>
-                    <td>{{sneaker.price | currency}}</td>
+                    <div class="product">
+                        <td scope="row"><img [src]="sneaker.image" height="90" class="rounded float-start"
+                                alt="cart-image">
+                        </td>
+                        <td class="sneaker-name">{{sneaker.name | uppercase}}</td>
+                    </div>
+                    <td class="text-center table-separation">{{sneaker.quantity}}</td>
+                    <td class="table-separation">{{sneaker.price | currency}}</td>
                 </tr>
             </tbody>
         </table>
 
-        <div class="total-price">
-            TOTAL: {{totalPrice$ | async | currency}}
+
+    </div>
+
+    <div *ngIf="activeCart.length > 0" class="buy">
+
+        <div class="name-input">
+            <div class="input-group">
+                <span class="input-group-text">Nombre y apellido</span>
+                <input type="text" aria-label="First name" class="form-control">
+                <input type="text" aria-label="Last name" class="form-control">
+            </div>
         </div>
 
+        <div class="address-input">
+            <div class="input-group">
+                <span class="input-group-text">Direccion de envio</span>
+                <input type="text" class="form-control">
+            </div>
+        </div>
+
+
+        <div class="total">
+            <span class="total-text">Total</span>
+            <span class="price-text">
+                {{totalPrice$ | async | currency}}
+            </span>
+        </div>
+
+        <div class="buy-button">
+            <button (click)="showAlert()" class="btn btn-success">Comprar</button>
+        </div>
+
+    </div>
+
+    <div class="alert" [class.visible]="isVisible"> 
+        Nop, no se puede comprar nada :b
     </div>
 
 </div>

@@ -22,6 +22,15 @@ export class CartComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  public isVisible: boolean = false;
+
+  showAlert() : void {
+    if (this.isVisible) { 
+      return;
+    } 
+    this.isVisible = true;
+    setTimeout(()=> this.isVisible = false,2500); 
+  }
 
 
 }

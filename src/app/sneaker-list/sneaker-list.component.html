@@ -9,8 +9,7 @@
                 <h5 class="card-text"><strong>{{sneaker.price | currency}}</strong></h5>
             </div>
             <div class="card-footer text-muted bg-white">
-                <app-input-quantity [(quantity)]="sneaker.quantity" [max]="sneaker.stock"></app-input-quantity>
-                Cant: {{sneaker.quantity}}
+                <app-input-quantity [(quantity)]="sneaker.quantity" [max]="sneaker.stock" (maxReached)="maxReachedAlert($event)"></app-input-quantity>
                 <div class="row">
                     <div class="col-md-12 mt-3">
                         <button  class="btn btn-sm btn-block btn-dark"  *ngIf="sneaker.stock == 0" disabled>Agregar al carrito</button>

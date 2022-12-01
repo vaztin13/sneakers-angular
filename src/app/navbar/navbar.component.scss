@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
 .cart-item {
     display: flex;
 }
@@ -36,4 +38,10 @@ li {
     font-size: 1rem;
 }
 
-
+.navbar-brand {
+    font-style: italic;
+    color: rgb(122, 190, 250);
+    font-weight: bold;
+    font-size: x-large;
+    font-family: 'Lato', sans-serif;
+}
